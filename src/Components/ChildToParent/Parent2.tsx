@@ -32,7 +32,7 @@ export default class Parent2 extends Component<IParent2PropsParameter,IParent2St
     private onParentTrigger=(event:MouseEvent)=>{
 
         this.setState({
-            ParentData:'Trigger by Parent'
+            ParentData:'Trigger by Parent 2'
         });
 
         event.preventDefault();
@@ -41,6 +41,7 @@ export default class Parent2 extends Component<IParent2PropsParameter,IParent2St
     public render(){
         console.log("Render Parent");
         return (
+            <react.Fragment>
             <div style={{backgroundColor:'yellow'}}>
                <h4 style={{color:'red'}}>
                     Parent 2: {this.state.ParentData}
@@ -50,6 +51,7 @@ export default class Parent2 extends Component<IParent2PropsParameter,IParent2St
 
                 <button className="btn btn-primary" onClick={this.onParentTrigger}>Parent Trigger</button>
             </div>
+            </react.Fragment>
         )
     }
 

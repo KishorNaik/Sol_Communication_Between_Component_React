@@ -1,4 +1,4 @@
-import react,{Component} from "react";
+import react,{Component, MouseEvent} from "react";
 import Child1 from "./Child1";
 
 interface IParent1PropsParameter{
@@ -6,7 +6,7 @@ interface IParent1PropsParameter{
 }
 
 interface IParent1State{
-    Data:String
+    Data:string
 }
 
 
@@ -20,12 +20,27 @@ export default class Parent1 extends Component<IParent1PropsParameter,IParent1St
         };
     }
 
+    private OnParentTrigger=(event:MouseEvent)=>{
+
+        this.setState({
+            Data:'Trigger by Parent 1'
+        });
+
+        event.preventDefault();
+    }
+
     public render(){
 
         return (
-            <div>
-                <Child1 DataParentToChild={this.state.Data}></Child1>
+            <react.Fragment>
+            <div style={{backgroundColor:'yellow'}}>
+                 <h4 style={{color:'red'}}>
+                    Parent1 :{this.state.Data}
+                </h4>
+                <Child1 DataParentToChild={this.state.Data} key={this.state.Data}></Child1>
+                <button className="btn btn-secondary" onClick={this.OnParentTrigger}>Parent Trigger</button>
             </div>
+            </react.Fragment>
         )
     }
 

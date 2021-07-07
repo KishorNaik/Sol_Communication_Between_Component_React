@@ -52,13 +52,14 @@ export default class Child2 extends Component<IChild2PropsParameter,IChild2State
     
     public render(){
         return (
+            <react.Fragment>
             <div style={{backgroundColor:'orange'}}>
                 <h4 style={{color:'whitesmoke'}}>
                     Child 2: {this.state.ChildData}
                 </h4>
                 <button className="btn btn-dark" onClick={this.onChildTrigger}>Child Trigger</button>
             </div>
-
+            </react.Fragment>
         )
     }
 

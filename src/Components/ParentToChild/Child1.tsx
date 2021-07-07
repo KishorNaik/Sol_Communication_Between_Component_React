@@ -20,13 +20,14 @@ export default class Child1 extends Component<IChild1PropsParameter,IChild1State
 
     public render(){
         return (
-            <div style={{backgroundColor:'gray'}}>
+            <react.Fragment>
+            <div style={{backgroundColor:'orange'}}>
                 <h4 style={{color:'whitesmoke'}}>
-                    {this.state.Data}
+                    Child 1:{this.state.Data}
                 </h4>
                 
             </div>
-
+            </react.Fragment>
         )
     }
 
